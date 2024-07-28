@@ -5,8 +5,7 @@
     {% if not albums %}
     <p>No Albums in Catalog!</p>
     {% else %}
-
-        <h1>All Albums</h1>
+        <h1 id="header">All Albums</h1>
         {% for album in albums %}
         <div class="card-box">
             <img src="{{ album.image_url }}" alt="Cover Image">
