@@ -1,0 +1,33 @@
+{% extends 'common/base.html' %}
+
+{% block content %}
+<section id="detailsPage">
+    <div class="wrapper">
+
+        <div class="albumCover">
+
+            <img src="{{ album.image_url }}" alt="Cover Image">
+        </div>
+    
+        <div class="albumInfo">
+            <div class="albumText">
+                <h1>Name: {{ album.album_name }}</h1>
+                <h4>Price: {{ album.price }}$</h4>
+                <h4>Songs: {% for song in album.songs.all %}
+                    <span>{{ song.song_name }}</span>
+                    {% if not forloop.last %}
+                        |
+                    {% endif %}
+                    {% endfor %}
+                </h4>
+            </div>
+        
+            <div class="actionBtn">
+                <a href="{% url 'edit-album' album.pk%}" class="edit">Edit</a>
+                <a href="{% url 'delete-album' album.pk%}" class="remove">Delete</a>
+            </div>
+
+        </div>
+    </div>
+</section>
+{% endblock %}
