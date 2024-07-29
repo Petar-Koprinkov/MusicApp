@@ -176,3 +176,7 @@
   line-height : 1.5;
   margin : 20px
 }
+
+.video:hover {
+  transform: scale(1.1);
+}
