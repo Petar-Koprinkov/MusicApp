@@ -9,5 +9,7 @@ urlpatterns = [
         path('album-details/', views.album_details, name='album-details'),
         path('delete-album/', views.delete_album, name='delete-album'),
         path('edit-album/', views.edit_album, name='edit-album'),
+        path('serve-song/', views.serve_song, name='serve-song'),
+        path('play-song/', views.play_song, name='play-song'),
     ]))
 ]

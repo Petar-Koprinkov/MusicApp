@@ -13,12 +13,15 @@
             <div class="albumText">
                 <h1>Name: {{ album.album_name }}</h1>
                 <h4>Price: {{ album.price }}$</h4>
-                <h4>Songs: {% for song in album.songs.all %}
-                    <span>{{ song.song_name }}</span>
+                <h4>Songs: 
+                    {% for song in album.songs.all %}
+                        <a href="{% url 'play-song' song.id %}">{{ song.song_name }}</a>
                     {% if not forloop.last %}
                         |
                     {% endif %}
                     {% endfor %}
+                
+
                 </h4>
             </div>
         

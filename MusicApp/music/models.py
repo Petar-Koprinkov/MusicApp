@@ -36,3 +36,8 @@ class Song(models.Model):
         on_delete=models.CASCADE,
         related_name='songs',
     )
+
+    music_file_data = models.FileField(
+        null=True,
+        editable=True,
+    )

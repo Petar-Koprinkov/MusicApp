@@ -3,14 +3,14 @@
 {% block content %}
 <section class="createPage">
 
-    <form method="POST" action="{% url 'create-song' %}">
+    <form method="POST" action="{% url 'create-song' %}" enctype="multipart/form-data">
         <fieldset>
             <legend>Add Album</legend>
             <div class="container">
                 {{ form }}
                 {% csrf_token %}
                 <button class="add-song" type="submit">Add New Song</button>
-            </div>
+            </div> 
         </fieldset>
     </form>
 </section>
