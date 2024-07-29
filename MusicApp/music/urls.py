@@ -5,11 +5,8 @@ urlpatterns = [
     path('', views.index, name='index'),
     path('create-song/', views.create_song, name='create-song'),
     path('create-album/', views.create_album, name='create-album'),
-    path('<int:pk>/', include([
-        path('album-details/', views.album_details, name='album-details'),
-        path('delete-album/', views.delete_album, name='delete-album'),
-        path('edit-album/', views.edit_album, name='edit-album'),
-        path('serve-song/', views.serve_song, name='serve-song'),
-        path('play-song/', views.play_song, name='play-song'),
-    ]))
-]
+    path('album-details/<int:pk>/' , views.album_details, name='album-details'),
+    path('delete-album/<int:pk>/', views.delete_album, name='delete-album'),
+    path('edit-album/<int:pk>/', views.edit_album, name='edit-album'),
+    path('serve-song/<int:pk>/', views.serve_song, name='serve-song'),
+    path('play-song/<int:pk>/', views.play_song, name='play-song'),]
