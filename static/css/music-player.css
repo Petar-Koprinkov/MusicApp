@@ -37,6 +37,12 @@
   padding: 0;
 }
 
+.small,
+.big,
+.big_play_pause:hover {
+  cursor: pointer;
+}
+
 .big,
 .big_play_pause {
   height: 60px;
@@ -140,11 +146,11 @@
 .controls {
   display: flex;
   justify-content: space-around;
-  margin: 70px 30px 0px 30px;
+  margin: 30px 30px 0px 30px;
 }
 
 .slider {
-  margin: 20px auto;
+  margin: 30px auto;
   width: 70%;
 }
 
@@ -180,3 +186,8 @@
 .video:hover {
   transform: scale(1.1);
 }
+
+#songSlider:hover {
+  cursor: pointer;
+}
+

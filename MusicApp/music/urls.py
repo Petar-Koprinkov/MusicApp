@@ -9,4 +9,5 @@ urlpatterns = [
     path('delete-album/<int:pk>/', views.delete_album, name='delete-album'),
     path('edit-album/<int:pk>/', views.edit_album, name='edit-album'),
     path('serve-song/<int:pk>/', views.serve_song, name='serve-song'),
-    path('play-song/<int:pk>/', views.play_song, name='play-song'), ]
+    path('play-song/<int:pk>/', views.play_song, name='play-song'),
+]

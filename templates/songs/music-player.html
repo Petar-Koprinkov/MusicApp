@@ -32,7 +32,7 @@ PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIGlkPSJMYXllcl8xIiBlbmFibGUt
         </div>
 
         <div class="slider">
-            <!-- Existing slider elements... -->
+            <input type="range" id="songSlider" min="0" max="100" value="0" step="0.1">
         </div>
 
         <div class="controls">
@@ -68,7 +68,7 @@ PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8v
         </div>
 
         <!-- Hidden audio player -->
-        <audio id="audioPlayer" style="display: none;">
+        <audio id="audioPlayer" style="display: none;" ontimeupdate="sliderDisplay()">
             <source id="audioSource" src="{% url 'serve-song' song.id %}" type="audio/mpeg">
             Your browser does not support the audio element.
         </audio>
@@ -77,11 +77,14 @@ PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8v
 
 <script type="text/javascript">
 
-function togglePlayPause() {
-    let audioPlayer = document.getElementById('audioPlayer');
-    let pauseImg = document.querySelector('.pauseImg');
-    let playImg = document.querySelector('.playImg');
+let audioPlayer = document.getElementById('audioPlayer');
+let pauseImg = document.querySelector('.pauseImg');
+let playImg = document.querySelector('.playImg');
+let player = document.getElementById('audioPlayer');
+let slider = document.getElementById('songSlider');
 
+function togglePlayPause() {
+    
     if (audioPlayer.paused || audioPlayer.ended) {
         audioPlayer.play();
 
@@ -96,6 +99,11 @@ function togglePlayPause() {
         document.querySelector('.playImg').style.display = 'inline-block';
     }
 }
+
+function sliderDisplay() {
+    slider.value = (player.currentTime / player.duration) * 100;
+}
+
 </script>
-    
+
 {% endblock %}
