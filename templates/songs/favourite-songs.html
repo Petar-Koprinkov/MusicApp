@@ -1,11 +1,12 @@
 {% extends 'common/base.html'%}
 
 {% block content %}
-    <section>
+    <section class="liked-songs">
     {% if have_songs is False %}
         <h2>You didn't like any songs</h2>
+        <p>The slot is empty</p>
     {% else %}
-        <h2>Your stored songs:</h2>
+        <h2>Your playlist:</h2>
         <ul>
             {% for song in songs %}
                 <li>
