@@ -1,0 +1,18 @@
+{% extends 'common/base.html'%}
+
+{% block content %}
+    <section>
+    {% if have_songs is False %}
+        <h2>You didn't like any songs</h2>
+    {% else %}
+        <h2>Your stored songs:</h2>
+        <ul>
+            {% for song in songs %}
+                <li>
+                    <a href="{% url 'play-song' song.pk %}">{{ song.song_name }}</a>
+                </li>
+            {% endfor %}
+        </ul>
+    {% endif %}
+    </section>
+{% endblock %}
